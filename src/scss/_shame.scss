@@ -1,0 +1,86 @@
+/* ------------------------------------------------------------------------------------------------
+
+Shame
+=====
+
+1. 	If it’s a hack, it goes in shame.css.
+2. 	Document all hacks fully:
+  a. 	What part of the codebase does it relate to?
+  b. 	Why was this needed?
+  c. 	How does this fix it?
+  d. 	How might you fix it properly, given more time?
+3. 	Do not blame the developer; if they explained why they had to do it then their reasons are
+probably (hopefully) valid.
+4. 	Try and clean shame.css up when you have some down time.
+
+via: http://csswizardry.com/2013/04/shame-css/
+
+------------------------------------------------------------------------------------------------ */
+
+.interface {
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.current-color {
+	text-align: center;
+	&--red,
+	&--green,
+	&--blue {
+		font-size: 5rem;
+		line-height: .9;
+	}
+	&--red {
+		color: #ff0000;
+	}
+	&--green {
+		color: #00ff00;
+	}
+	&--blue {
+		color: #0000ff;
+	}
+}
+
+#game-stage {
+	float: right;
+	background-size: 30px 30px;
+	background-position: 0 0, 15px 15px;
+	background-image:
+		linear-gradient(45deg, #cccccc 25%, transparent 25%, transparent 75%, #cccccc 75%, #cccccc),
+		linear-gradient(45deg, #cccccc 25%, transparent 25%, transparent 75%, #cccccc 75%, #cccccc);
+}
+
+.PlayerCharacter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 300ms ease-in-out;
+	text-align: center;
+	color: white;
+	font-size: 40px !important;
+}
+
+.GameScreen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4rem !important;
+}
+
+.ColorTile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 5px;
+}
+
+.ColorTileLabel {
+	display: none;
+	.show-color-labels & {
+		display: block;
+	}
+}
