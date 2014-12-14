@@ -40,7 +40,7 @@ Crafty.scene('Game', function () {
 			if (!this.occupied[x][y]) {
 				color = u.randomColor();
 				Crafty.e('ColorTile')
-					.append('<div class="ColorTileLabel">'+color+'</div>')
+					.append('<div class="ColorTileLabel">'+color.replace('rgb(','').replace(')','')+'</div>')
 					.at(x, y)
 					.setColor(color);
 			}
