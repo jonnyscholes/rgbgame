@@ -16,23 +16,34 @@ probably (hopefully) valid.
 via: http://csswizardry.com/2013/04/shame-css/
 
 ------------------------------------------------------------------------------------------------ */
-
 .interface {
-	float: left;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	text-align: center;
+	&--title {
+		margin: 0;
+	}
+	&--challenge {
+		margin: 0;
+	}
 }
 
-.current-color {
-	text-align: center;
-	&--red,
-	&--green,
-	&--blue {
-		font-size: 5rem;
-		line-height: .9;
+@include respond-to($desktop-context) {
+	.interface {
+		float: left;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
+}
+
+
+.current-color {
+	margin-bottom: 1rem;
+	text-align: center;
+	&--title {
+		margin: 0;
+	}
+
 	&--red {
 		color: #ff0000;
 	}
@@ -43,6 +54,19 @@ via: http://csswizardry.com/2013/04/shame-css/
 		color: #0000ff;
 	}
 }
+
+@include respond-to($desktop-context) {
+	.current-color {
+		&--red,
+		&--green,
+		&--blue {
+			font-size: 5rem;
+			line-height: .9;
+		}
+	}
+}
+
+
 
 #game-stage {
 	float: right;
@@ -79,8 +103,17 @@ via: http://csswizardry.com/2013/04/shame-css/
 }
 
 .ColorTileLabel {
+	font-size: .57rem;
 	display: none;
 	.show-color-labels & {
 		display: block;
 	}
 }
+
+@include respond-to($desktop-context) {
+	.ColorTileLabel {
+
+	}
+}
+
+

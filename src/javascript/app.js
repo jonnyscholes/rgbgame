@@ -13,6 +13,8 @@ var Game = function() {
 	var scale = 6;
 	var unit;
 
+	var isMobile = $(window).width() <= 768;
+
 	if ($(window).width() > $(window).height()) {
 		unit = parseInt($(window).height() / scale, 10);
 	} else {
@@ -58,7 +60,10 @@ var Game = function() {
 		Crafty.init(self.width(), self.height(), 'game-stage');
 		Crafty.scene('Loading');
 		self.updateLevelUI();
-		$('.js-interface').width($(window).width()-self.width()).height($(window).height());
+		console.log(isMobile);
+		if (!isMobile) { // @todo @hack: - use respondjs instead. Or ideally dont do this at all!
+			$('.js-interface').width($(window).width() - self.width()).height($(window).height());
+		}
 	};
 
 	self.reset = function() {

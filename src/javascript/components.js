@@ -1,27 +1,4 @@
 var u = require('./utils.js');
-//
-//Crafty.c('Swipeable', {
-//	downPosition: false,
-//	upPosition: false,
-//	moveCount: 0,
-//	test: function() {
-//		this.requires('Mouse')
-//			.bind('MouseDown', function (e) {
-//				console.log('MouseDown');
-//				this.downPosition = {x: this.x, y: this.y };
-//			}).bind('MouseUp', function (e) {
-//				this.upPosition = {x: this.x, y: this.y };
-//				console.log('MouseUp');
-//				console.log(this.downPosition, this.upPosition, this.moveCount);
-//			}).bind('MouseMove',function (e) {
-//				if (this.downPosition) {
-//					this.moveCount++;
-//				}
-//			});
-//
-//		return this;
-//	}
-//});
 
 Crafty.c('Grid', {
 	init: function () {
