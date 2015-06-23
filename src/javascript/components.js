@@ -29,6 +29,24 @@ Crafty.c('Actor', {
 	}
 });
 
+Crafty.c('Button', {
+	init: function () {
+		this.requires('Actor, Color, Text, Mouse');
+	}
+});
+
+
+Crafty.c('GameScreenButton', {
+	init: function () {
+		this.requires('Button')
+		.attr({ w :RunningGame.map_grid.tile.width*2, h: RunningGame.map_grid.tile.width })
+		.at(2, 4)
+		.color('blue')
+		.text('Start level '+(RunningGame.currentLevel+1));
+	}
+});
+
+
 Crafty.c('GameScreen', {
 	init: function () {
 		this.requires('2D, DOM, Text');

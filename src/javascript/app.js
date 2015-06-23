@@ -58,18 +58,13 @@ var Game = function() {
 
 	self.start = function() {
 		Crafty.init(self.width(), self.height(), 'game-stage');
-		Crafty.scene('Loading');
-		self.updateLevelUI();
-		console.log(isMobile);
-		if (!isMobile) { // @todo @hack: - use respondjs instead. Or ideally dont do this at all!
-			$('.js-interface').width($(window).width() - self.width()).height($(window).height());
-		}
+		Crafty.scene('GameStart');
 	};
 
 	self.reset = function() {
 		self.currentLevel = 0;
 		self.updateLevelUI();
-		Crafty.scene('Game');
+		Crafty.scene('GameStart');
 	};
 
 	self.updateCurrentColor = function(color) {
